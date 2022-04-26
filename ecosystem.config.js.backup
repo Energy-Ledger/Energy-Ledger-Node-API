@@ -1,0 +1,74 @@
+module.exports = {
+  apps : [{
+    name   : "Production-API",
+    script : "./server.js",
+    instances: 1, 
+    max_memory_restart: "100M",
+    watch: true
+  },
+  {
+   name: "Production-Claim-ETH-Syncer",
+   script : "node ace claim:eth",
+   instances: 1, 
+   max_memory_restart: "100M",
+   watch: true 
+  },
+  {
+   name: "Production-Claim-BSC-Syncer",
+   script : "node ace claim:bsc",
+   instances: 1, 
+   max_memory_restart: "100M",
+   watch: true 
+  },
+  {
+   name: "Production-User-Create-Syncer",
+   script : "node ace offchain:user-syncer",
+   instances: 1, 
+   max_memory_restart: "100M",
+   watch: true 
+  },
+  {
+   name: "Production-User-Update-Syncer",
+   script : "node ace offchain:updated-user-syncer",
+   instances: 1, 
+   max_memory_restart: "100M",
+   watch: true 
+  },
+  {
+   name: "Production-Batch-Create-Syncer",
+   script : "node ace offchain:batch-syncer",
+   instances: 1, 
+   max_memory_restart: "100M",
+   watch: true 
+  },
+  {
+   name: "Production-Percent-Update-Syncer",
+   script : "node ace offchain:percent-syncer",
+   instances: 1, 
+   max_memory_restart: "100M",
+   watch: true 
+  },
+  {
+   name: "Production-Reward-Syncer",
+   script : "node ace offchain:reward-syncer",
+   instances: 1, 
+   max_memory_restart: "100M",
+   watch: true 
+  },
+  {
+   name: "Production-Stake-Syncer",
+   script : "node ace offchain:stake-syncer",
+   instances: 1, 
+   max_memory_restart: "100M",
+   watch: true 
+  },
+  {
+   name: "Production-Removed-Stake-Syncer",
+   script : "node ace offchain:removed-stake-syncer",
+   instances: 1, 
+   max_memory_restart: "100M",
+   watch: true 
+  }
+
+  ],
+}
